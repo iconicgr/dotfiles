@@ -93,7 +93,7 @@ parse_git_dirty(){
 
 get_git(){
     if [ -d '.git' ]; then
-        git_state="\n│   : "
+        git_state="\n│   $bold:$nocolor "
 
         if [ -n "$(git status --porcelain)" ]; then
             git_state+="$red"
@@ -143,8 +143,11 @@ get_git(){
     fi
 }
 
-PS1='┌──[$(get_user)@$fqdn($(get_ip))]'
-PS1+='-[$(get_directory)]'
+PS1='┌──'
+#PS1+='[$(get_user)]-'
+PS1+='[$fqdn]-'
+PS1+='[$(get_ip)]-'
+PS1+='[$(get_directory)]'
 PS1+='$(get_git)'
 PS1+='\n└──╼ \$ '
 
