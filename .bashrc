@@ -33,7 +33,7 @@ get_fqdn(){
 }
 
 get_ssh(){
-    echo -e "$lightblue$(if [[ $(who am i) =~ \([-a-zA-Z0-9\.]+\)$ ]] ; then echo SSH; fi)$nocolor "
+    echo -e "$lightblue($(if [[ $(who am i) =~ \([-a-zA-Z0-9\.]+\)$ ]] ; then echo SSH; fi))$nocolor "
 }
 
 get_git(){
