@@ -24,7 +24,8 @@ get_directory(){
     echo -e "$green$(dirs)$nocolor"
 }
 
-fqdn=$(nslookup $ip | cut -f 2 | cut -f 2 -d "=" | rev | cut -c 2- | rev | awk '{$1=$1};1');
+fqdn=$(hostname -A | rev | cut -c 2- | rev )
+#$(nslookup $ip | cut -f 2 | cut -f 2 -d "=" | rev | cut -c 2- | rev | awk '{$1=$1};1');
 
 parse_git_branch() {
     local branch=$(git branch 2> /dev/null |awk '{print $2}')
@@ -144,7 +145,7 @@ get_git(){
     fi
 }
 
-PS1='┌──'
+PS1='\n┌──'
 #PS1+='[$(get_user)]-'
 PS1+='[$fqdn]-'
 PS1+='[$(get_ip)]-'
