@@ -25,7 +25,7 @@ get_directory(){
     echo -e "$green$(dirs)$nocolor"
 }
 
-fqdn=$(hostname -A | rev | cut -c 2- | rev )
+fqdn="$(hostname -A | rev | cut -c 2- | rev | cut -f1 -d' ')"
 #$(nslookup $ip | cut -f 2 | cut -f 2 -d "=" | rev | cut -c 2- | rev | awk '{$1=$1};1');
 
 get_fqdn(){
