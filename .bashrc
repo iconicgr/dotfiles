@@ -1,11 +1,29 @@
-nocolor='\e[39m'
+nocolor='\e[0m'
 red='\e[91m'
 green='\e[92m'
 orange='\e[38;5;215m'
+blue='\e[44m'
+cyan='\e[46m'
+lightblue='\e[96m'
+bold='\e[1m'
 
 user=$USER
+
+get_user(){
+    echo -e "$user"
+}
+
 ip="$(ip route get 1 | tr -s ' ' | cut -d' ' -f7)"
-fqdn=$(nslookup 10.153.3.109 | cut -f 2 | cut -f 2 -d "=" | rev | cut -c 2- | rev | awk '{$1=$1};1');
+
+get_ip(){
+    echo -e "$lightblue$ip$nocolor"
+}
+
+get_directory(){
+    echo -e "$green$(dirs)$nocolor"
+}
+
+fqdn=$(nslookup $ip | cut -f 2 | cut -f 2 -d "=" | rev | cut -c 2- | rev | awk '{$1=$1};1');
 
 parse_git_branch() {
     local branch=$(git branch 2> /dev/null |awk '{print $2}')
@@ -125,7 +143,14 @@ get_git(){
     fi
 }
 
-PS1='┌──[$user@$fqdn($ip)]'
-PS1+='-[\w]'
+PS1='┌──[$(get_user)@$fqdn($(get_ip))]'
+PS1+='-[$(get_directory)]'
 PS1+='$(get_git)'
 PS1+='\n└──╼ \$ '
+
+
+## Loading aliases
+## Tom Lawrence script
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
