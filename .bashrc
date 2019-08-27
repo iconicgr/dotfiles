@@ -32,6 +32,10 @@ get_fqdn(){
     echo -e " $bold$fqdn$nocolor"
 }
 
+get_ssh(){
+    echo -e "$lightblue$(if [[ $(who am i) =~ \([-a-zA-Z0-9\.]+\)$ ]] ; then echo SSH; fi)$nocolor "
+}
+
 get_git(){
     if [ -d '.git' ]; then
         git_state="\n│   $bold$nocolor "
@@ -90,7 +94,7 @@ PS1+='$(get_fqdn) '
 #PS1+='($(get_ip)) '
 PS1+='($(get_directory)) '
 PS1+='$(get_git)'
-PS1+='\n└──╼ \$ '
+PS1+='\n└──╼ $(get_ssh)\$ '
 
 
 ## Loading aliases
