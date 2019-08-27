@@ -3,7 +3,7 @@ nocolor='\e[0m'
 red='\e[91m'
 green='\e[92m'
 orange='\e[38;5;215m'
-blue='\e[44m'
+blue='\e[36m'
 cyan='\e[46m'
 lightblue='\e[96m'
 bold='\e[1m'
@@ -75,7 +75,7 @@ get_git(){
 
         local number_untracked="$(git ls-files --other --exclude-standard | wc -l)"
         if [ ! "$number_untracked" -eq "0" ]; then
-            git_state+=" $red↔$number_untracked$nocolor"
+            git_state+=" $red?$number_untracked$nocolor"
         fi
 
         local number_unpushed="$(git log --branches --not --remotes | grep commit | wc -l)"
@@ -83,6 +83,16 @@ get_git(){
             git_state+=" $red⚑$number_unpushed$nocolor"
         fi
 
+        local number_ahead="$(git status -sb | grep ahead | sed 's/.*behind \(.*\)]/\1/')"
+        local number_behind="$(git status -sb | grep behind | sed 's/.*behind \(.*\)]/\1/')"
+        if [ ! "0$number_ahead" -eq 0 -o ! "0$number_behind" -eq 0 ]; then
+            if [ ! "$number_ahead" -eq 0 ]; then
+                git_state+=" $blue↑$number_ahead$nocolor"
+            fi
+            if [ ! "$number_behind" -eq 0 ]; then
+                git_state+=" $blue↓$number_behind$nocolor"
+            fi
+        fi
 
         echo -e "$git_state"
     fi
