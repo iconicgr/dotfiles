@@ -102,7 +102,7 @@ get_git(){
             git_state+="$green"
         fi
 
-        local branch=$(git branch 2> /dev/null |awk '{print $2}' | tr -d '\n')
+        local branch=$(git branch | grep '*' | awk '{print $2}')
         if [ -z "$branch" ]; then
             git_state+="(no commits yet)$nocolor"
         else
