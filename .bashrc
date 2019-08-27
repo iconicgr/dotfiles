@@ -29,12 +29,12 @@ fqdn=$(hostname -A | rev | cut -c 2- | rev )
 #$(nslookup $ip | cut -f 2 | cut -f 2 -d "=" | rev | cut -c 2- | rev | awk '{$1=$1};1');
 
 get_fqdn(){
-    echo -e "$bold$fqdn$nocolor"
+    echo -e " $bold$fqdn$nocolor"
 }
 
 get_git(){
     if [ -d '.git' ]; then
-        git_state="\n│   $bold:$nocolor "
+        git_state="\n│   $bold$nocolor "
 
         if [ -n "$(git status --porcelain)" ]; then
             git_state+="$red"
@@ -85,10 +85,10 @@ get_git(){
 }
 
 PS1='\n┌──'
-#PS1+='[$(get_user)]─'
-PS1+='[$(get_fqdn)]─'
-#PS1+='[$(get_ip)]─'
-PS1+='[$(get_directory)]'
+#PS1+='$(get_user) '
+PS1+='$(get_fqdn) '
+#PS1+='($(get_ip)) '
+PS1+='($(get_directory)) '
 PS1+='$(get_git)'
 PS1+='\n└──╼ \$ '
 
