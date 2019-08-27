@@ -3,7 +3,10 @@ Dot files for ubuntu/debian bash
 
 ## Quick Intro
 The project includes a few . files to be copied in your ~ directory. 
-It was created as a way to practice my sh writing skills. It's tested on latest ubuntu and debian.
+
+It was created to practice my sh writing skills. 
+
+It's tested on latest ubuntu and debian.
 
 ## Functionality
 - *Readable bash command*: Provides much info without being distracting
