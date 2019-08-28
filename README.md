@@ -9,12 +9,15 @@ It was created to practice my sh writing skills.
 It's tested on latest ubuntu and debian.
 
 ## Functionality
-- *Readable bash command*: Provides much info without being distracting
+- *Readable bash prompt*: Provides much info without being distracting
 - *git*: Provides a clear overview of the local git repository. The feature is disabled for non-git directories.
-- *dns*: Quick view of the machine's main IP and FQDN as it's returned by your main nameserver
+- *Computer ID*: Quick view of the machine's FQDN or Hostname
+- *Computer's main IP*: as it's returned by its routes
+- *Useful Aliases*: Provides some commonly used aliases for ls, df etc
+- *Disable parts*: By commenting out
 
 ## TODO
-- Add some color to make dir, fqdn and ip a bit more prominent
+- Revise the code to be more modular, separate graphics from info
 
 ## Thank you to
 - **Tom Lawrence** @ [Tom Lawrence Systems](https://www.lawrencesystems.com/my-customized-bash-terminal-shell-setup/)
