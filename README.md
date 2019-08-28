@@ -13,6 +13,7 @@ It's tested on latest ubuntu and debian.
 - *git*: Provides a clear overview of the local git repository. The feature is disabled for non-git directories.
 - *Computer ID*: Quick view of the machine's FQDN or Hostname
 - *Computer's main IP*: as it's returned by its routes
+- *SSH*: Indication by the prompt to remind you that you are working remotely
 - *Useful Aliases*: Provides some commonly used aliases for ls, df etc
 - *Disable parts*: By commenting out
 
