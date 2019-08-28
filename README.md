@@ -23,5 +23,5 @@ It's tested on latest ubuntu and debian.
 ## Thank you to
 - **Tom Lawrence** @ [Tom Lawrence Systems](https://www.lawrencesystems.com/my-customized-bash-terminal-shell-setup/)
   and [Flipside Creations](https://github.com/flipsidecreations/dotfiles) for the initial inspiration
-- **Chris Marsh** @ [https://github.com/chris-marsh/pureline](Pureline) for his nice scripts and logi
+- **Chris Marsh** @ [https://github.com/chris-marsh/pureline](Pureline) for his nice scripts and logic
 
