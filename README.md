@@ -1,5 +1,6 @@
 # dotfiles
 Useful dot files for ubuntu/debian bash prompt
+(the files do not work properly on git-bash)
 
 ## Quick Intro
 The project includes a few . files to be copied in your ~ directory. 
