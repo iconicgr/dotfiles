@@ -1,5 +1,5 @@
 # dotfiles
-Useful dot files for ubuntu/debian bash prompt
+Useful dot files for ubuntu/debian bash prompt  
 (the files do not work properly on git-bash)
 
 ## Quick Intro
