@@ -10,6 +10,8 @@ It was created to practice my sh writing skills.
 
 It's tested on latest ubuntu and debian.
 
+![Preview](images/dotfiles.png)
+
 ## Functionality
 - *Readable bash prompt*: Provides much info without being distracting
 - *git*: Provides a clear overview of the local git repository. The feature is disabled for non-git directories.
