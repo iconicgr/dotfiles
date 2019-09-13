@@ -9,10 +9,8 @@ lightblue='\x01\e[96m\x02'
 bold='\x01\e[1m\x02'
 grey='\x01\e[38;5;239m\x02'
 
-user=$USER
-
 get_user(){
-    echo -e "$user"
+    echo -e "$USER"
 }
 
 ip="$(ip route get 1 | tr -s ' ' | cut -d' ' -f7)"
@@ -36,53 +34,53 @@ get_ssh(){
 }
 
 get_git(){
-    if [ -d '.git' ]; then
+    if [[ -d '.git' ]]; then
         git_state="\n│   $bold$nocolor "
 
-        if [ -n "$(git status --porcelain)" ]; then
+        if [[ -n "$(git status --porcelain)" ]]; then
             git_state+="$red"
         else
             git_state+="$green"
         fi
 
         local branch=$(git branch | grep '*' | awk '{print $2}')
-        if [ -z "$branch" ]; then
+        if [[ -z "$branch" ]]; then
             git_state+="(no commits yet)$nocolor"
         else
             git_state+="($branch)$nocolor"
         fi
 
         local number_stash="$(git stash list 2>/dev/null | wc -l)"
-        if [ ! "$number_stash" -eq 0 ]; then
+        if [[ ! "$number_stash" -eq 0 ]]; then
             git_state+=" $orange§$number_stash$nocolor"
         fi
 
         local number_staged="$(git diff --staged --name-only --diff-filter=AM 2> /dev/null | wc -l)"
-        if [ ! "$number_staged" -eq "0" ]; then
+        if [[ ! "$number_staged" -eq "0" ]]; then
             git_state+=" $green✔$number_staged$nocolor"
         fi
 
         local number_conflicts="$(git diff --name-only --diff-filter=U 2> /dev/null | wc -l)"
-        if [ ! "$number_conflicts" -eq "0" ]; then
+        if [[ ! "$number_conflicts" -eq "0" ]]; then
            git_state+= "$red✘$number_conflicts$nocolor"
         fi
 
         local number_modified="$(git diff --name-only --diff-filter=M 2> /dev/null | wc -l )"
-        if [ ! "$number_modified" -eq "0" ]; then
+        if [[ ! "$number_modified" -eq "0" ]]; then
             git_state+=" $red✚$number_modified$nocolor"
         fi
 
         local number_untracked="$(git ls-files --other --exclude-standard | wc -l)"
-        if [ ! "$number_untracked" -eq "0" ]; then
+        if [[ ! "$number_untracked" -eq "0" ]]; then
             git_state+=" $red?$number_untracked$nocolor"
         fi
 
         local number_unpushed="$(git log --branches --not --remotes | grep commit | wc -l)"
-        if [  ! "$number_unpushed" -eq "0" ]; then
+        if [[  ! "$number_unpushed" -eq "0" ]]; then
             git_state+=" $red⚑$number_unpushed$nocolor"
         fi
 
-#        local number_ahead="$(git status -sb | grep ahead | sed 's/.*behind \(.*\)]/\1/')"
+        local number_ahead="$(git status -sb | grep ahead | sed 's/.*behind \(.*\)]/\1/')"
 #        local number_behind="$(git status -sb | grep behind | sed 's/.*behind \(.*\)]/\1/')"
 #        if [ ! "0$number_ahead" -eq 0 -o ! "0$number_behind" -eq 0 ]; then
 #            if [ ! "$number_ahead" -eq 0 ]; then
@@ -98,9 +96,9 @@ get_git(){
 }
 
 PS1='\n┌──'
-#PS1+='$(get_user) '
+##PS1+='$(get_user) '
 PS1+='$(get_fqdn) '
-#PS1+='($(get_ip)) '
+##PS1+='($(get_ip)) '
 PS1+='($(get_directory)) '
 PS1+='$(get_git)'
 PS1+='\n└──╼ $(get_ssh)\$ '
@@ -108,6 +106,6 @@ PS1+='\n└──╼ $(get_ssh)\$ '
 
 ## Loading aliases
 ## Tom Lawrence script
-if [ -f ~/.bash_aliases ]; then
+if [[ -f ~/.bash_aliases ]]; then
     . ~/.bash_aliases
 fi
