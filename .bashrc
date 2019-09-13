@@ -1,4 +1,3 @@
-
 nocolor='\x01\e[0m\x02'
 red='\x01\e[91m\x02'
 green='\x01\e[92m\x02'
@@ -80,7 +79,7 @@ get_git(){
             git_state+=" $red⚑$number_unpushed$nocolor"
         fi
 
-        local number_ahead="$(git status -sb | grep ahead | sed 's/.*behind \(.*\)]/\1/')"
+#       local number_ahead="$(git status -sb | grep ahead | sed 's/.*behind \(.*\)]/\1/')"
 #        local number_behind="$(git status -sb | grep behind | sed 's/.*behind \(.*\)]/\1/')"
 #        if [ ! "0$number_ahead" -eq 0 -o ! "0$number_behind" -eq 0 ]; then
 #            if [ ! "$number_ahead" -eq 0 ]; then
@@ -96,9 +95,9 @@ get_git(){
 }
 
 PS1='\n┌──'
-##PS1+='$(get_user) '
+#PS1+='$(get_user) '
 PS1+='$(get_fqdn) '
-##PS1+='($(get_ip)) '
+#PS1+='($(get_ip)) '
 PS1+='($(get_directory)) '
 PS1+='$(get_git)'
 PS1+='\n└──╼ $(get_ssh)\$ '
