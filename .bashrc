@@ -82,16 +82,16 @@ get_git(){
             git_state+=" $red⚑$number_unpushed$nocolor"
         fi
 
-        local number_ahead="$(git status -sb | grep ahead | sed 's/.*behind \(.*\)]/\1/')"
-        local number_behind="$(git status -sb | grep behind | sed 's/.*behind \(.*\)]/\1/')"
-        if [ ! "0$number_ahead" -eq 0 -o ! "0$number_behind" -eq 0 ]; then
-            if [ ! "$number_ahead" -eq 0 ]; then
-                git_state+=" $blue↑$number_ahead$nocolor"
-            fi
-            if [ ! "$number_behind" -eq 0 ]; then
-                git_state+=" $blue↓$number_behind$nocolor"
-            fi
-        fi
+#        local number_ahead="$(git status -sb | grep ahead | sed 's/.*behind \(.*\)]/\1/')"
+#        local number_behind="$(git status -sb | grep behind | sed 's/.*behind \(.*\)]/\1/')"
+#        if [ ! "0$number_ahead" -eq 0 -o ! "0$number_behind" -eq 0 ]; then
+#            if [ ! "$number_ahead" -eq 0 ]; then
+#                git_state+=" $blue↑$number_ahead$nocolor"
+#            fi
+#            if [ ! "$number_behind" -eq 0 ]; then
+#                git_state+=" $blue↓$number_behind$nocolor"
+#            fi
+#        fi
 
         echo -e "$git_state"
     fi
