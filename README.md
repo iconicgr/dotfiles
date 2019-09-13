@@ -20,6 +20,7 @@ It's tested on latest ubuntu and debian.
 
 ## TODO
 - Revise the code to be more modular, separate graphics from info
+- git ahead and behind error
 
 ## Thank you to
 - **Tom Lawrence** @ [Tom Lawrence Systems](https://www.lawrencesystems.com/my-customized-bash-terminal-shell-setup/)
