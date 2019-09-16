@@ -14,7 +14,7 @@ It's tested on latest ubuntu and debian.
 
 ## Functionality
 - *Readable bash prompt*: Provides much info without being distracting
-- *git*: Provides a clear overview of the local git repository. The feature is disabled for non-git directories.
+- *git*: Provides a clear overview of the local git repository. The feature is hidden for non-git directories.
 - *Computer ID*: Quick view of the machine's FQDN or Hostname
 - *Computer's main IP*: as it's returned by its routes
 - *SSH*: Indication by the prompt to remind you that you are working remotely
