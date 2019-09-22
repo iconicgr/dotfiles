@@ -3,8 +3,14 @@
 Useful dot files for ubuntu/debian bash prompt  
 (the files do not work properly on git-bash)
 
-## Quick Intro
+## Quick Intro and Installation
 The project includes a few . files to be copied in your ~ directory. 
+If you already have a .bashrc file, you can use something like
+
+``` bash
+source ~/dotfiles/.bashrc
+source ~/dotfiles/.bash_aliases
+```
 
 It was created to practice my sh writing skills. 
 
