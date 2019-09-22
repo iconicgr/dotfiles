@@ -30,6 +30,8 @@ It's tested on latest ubuntu and debian.
 ## TODO
 - Revise the code to be more modular, separate graphics from info
 - git ahead and behind error
+- Fix problem with ahead/behind
+- Long delay if primary DNS is not available
 
 ## Thank you to
 - **Tom Lawrence** @ [Tom Lawrence Systems](https://www.lawrencesystems.com/my-customized-bash-terminal-shell-setup/)
