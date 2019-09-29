@@ -1,5 +1,3 @@
-  GNU nano 3.2                             setup.sh                                       
-
 apt update
 apt -y upgrade
 apt -y install firefox-esr
