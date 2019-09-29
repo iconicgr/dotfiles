@@ -5,7 +5,7 @@ apt -y install vlc
 apt -y install htop
 apt -y remove kaccessible
 apt -y remove konqueror
-# apt -y remove libreoffice
+apt -y purge libreoffice*
 apt -y remove kate
 apt -y install git
 apt -y install parted
