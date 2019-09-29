@@ -5,6 +5,7 @@ apt -y install vlc
 apt -y install htop
 apt -y remove kaccessible
 apt -y remove konqueror
+# apt -y remove libreoffice
 apt -y remove kate
 apt -y install git
 apt -y install parted
@@ -31,7 +32,7 @@ apt update
 apt -y install docker-ce docker-ce-cli containerd.io
 usermod -aG docker $USER
 
-#apt remove vlc
+# apt remove vlc
 apt remove packagekit
 
 apt -y autoremove
