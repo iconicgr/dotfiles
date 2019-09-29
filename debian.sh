@@ -8,6 +8,7 @@ apt -y remove konqueror
 apt -y remove kate
 apt -y install git
 apt -y install parted
+apt -y install gparted
 
 curl -o vscode.deb -L http://go.microsoft.com/fwlink/?LinkID=760868
 apt -y install -f ./vscode.deb
@@ -30,7 +31,7 @@ apt update
 apt -y install docker-ce docker-ce-cli containerd.io
 usermod -aG docker $USER
 
-apt remove vlc
+#apt remove vlc
 apt remove packagekit
 
 apt -y autoremove
