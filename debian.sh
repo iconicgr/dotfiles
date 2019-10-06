@@ -35,4 +35,9 @@ usermod -aG docker $USER
 # apt remove vlc
 apt -y remove packagekit
 
+apt -y install neofetch
+
+systemctl disable NetworkManager-wait-online
+systemctl disable docker
+
 apt -y autoremove
