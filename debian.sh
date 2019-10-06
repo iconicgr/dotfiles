@@ -41,3 +41,6 @@ systemctl disable NetworkManager-wait-online
 systemctl disable docker
 
 apt -y autoremove
+
+echo "source /home/$USER/Documents/dotfiles/.bashrc" >> /home/$USER/.bashrc
+echo "source /home/$USER/Documents/dotfiles/.bash_aliases" >> /home/$USER/.bashrc
