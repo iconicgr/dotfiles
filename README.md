@@ -14,7 +14,7 @@ source ~/dotfiles/.bash_aliases
 
 It was created to practice my sh writing skills. 
 
-It's tested on latest ubuntu and debian.
+It's tested on latest Ubuntu and Debian. For Archlinux you can use the relevant branch.
 
 ![Preview](images/dotfiles.png)
 
