@@ -8,6 +8,8 @@ apt -y remove konqueror
 apt -y purge libreoffice*
 apt -y remove kate
 apt -y install git
+git config --global user.email "d.kastaniotis@iconic.gr"
+git config --global user.name "Dimitris Kastaniotis"
 apt -y install parted
 apt -y install gparted
 
