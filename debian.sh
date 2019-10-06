@@ -33,6 +33,6 @@ apt -y install docker-ce docker-ce-cli containerd.io
 usermod -aG docker $USER
 
 # apt remove vlc
-apt remove packagekit
+apt -y remove packagekit
 
 apt -y autoremove
