@@ -64,7 +64,11 @@ systemctl disable docker
 
 apt -y autoremove
 
-cd /lib/modules/4.19.0.6-amd64/
+find /lib/modules/4.19.0.6-amd64/ -name *.ko -exec strip --strip-unneeded {} +
+touch /etc/initramfs-tools/conf.d/compress
+echo COMPRESS=xz > /etc/initramfs-tools/conf.d/compress
+sed -i 's/MODULES=most/MODULES=dep/' /etc/initramfs-tools/initramfs.conf
+update-initramfs -u
 
 # TODO: check if files exist first
 # echo "source /home/$USER/Documents/dotfiles/.bashrc" >> /home/$USER/.bashrc
