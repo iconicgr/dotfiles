@@ -64,6 +64,8 @@ systemctl disable docker
 
 apt -y autoremove
 
+cd /lib/modules/4.19.0.6-amd64/
+
 # TODO: check if files exist first
 # echo "source /home/$USER/Documents/dotfiles/.bashrc" >> /home/$USER/.bashrc
 # echo "source /home/$USER/Documents/dotfiles/.bash_aliases" >> /home/$USER/.bashrc
