@@ -55,6 +55,7 @@ apt -y remove kaddressbook
 apt -y remove kdepim-themeeditors
 apt -y remove pim-sieve-editor
 apt -y remove pim-data-exporter
+apt -y remove khelpcenter
 
 apt -y install neofetch
 
