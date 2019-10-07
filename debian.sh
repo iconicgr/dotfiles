@@ -36,6 +36,25 @@ usermod -aG docker $USER
 
 # apt remove vlc
 apt -y remove packagekit
+apt -y purge kontact
+apt -y remove okular
+apt -y remove gwenview
+apt -y remove akregator
+apt -y remove kmail
+apt -y remove kopete
+apt -y remove juk
+apt -y remove korganizer
+apt -y remove k3b
+apt -y remove dragonplayer
+apt -y remove ark
+apt -y remove kfind
+apt -y remove knotes
+apt -y remove kwrite
+apt -y remove sweeper
+apt -y remove kaddressbook
+apt -y remove kdepim-themeeditors
+apt -y remove pim-sieve-editor
+apt -y remove pim-data-exporter
 
 apt -y install neofetch
 
