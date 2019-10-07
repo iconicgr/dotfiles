@@ -1,17 +1,42 @@
 apt update
 apt -y upgrade
+
+# apt remove vlc
 apt -y install firefox-esr
-apt -y install vlc
-apt -y install htop
-apt -y remove kaccessible
-apt -y remove konqueror
-apt -y purge libreoffice*
-apt -y remove kate
 apt -y install git
+apt -y install gparted
+apt -y install htop
+apt -y install neofetch
+apt -y install parted
+apt -y install vlc
+apt -y purge kontact
+apt -y purge libreoffice*
+apt -y remove akregator
+apt -y remove ark
+apt -y remove dragonplayer
+apt -y remove gwenview
+apt -y remove juk
+apt -y remove k3b
+apt -y remove kaccessible
+apt -y remove kaddressbook
+apt -y remove kate
+apt -y remove kdepim-themeeditors
+apt -y remove kfind
+apt -y remove khelpcenter
+apt -y remove kmail
+apt -y remove knotes
+apt -y remove konqueror
+apt -y remove kopete
+apt -y remove korganizer
+apt -y remove kwrite
+apt -y remove okular
+apt -y remove packagekit
+apt -y remove pim-data-exporter
+apt -y remove pim-sieve-editor
+apt -y remove sweeper
+
 git config --global user.email "d.kastaniotis@iconic.gr"
 git config --global user.name "Dimitris Kastaniotis"
-apt -y install parted
-apt -y install gparted
 
 curl -o vscode.deb -L http://go.microsoft.com/fwlink/?LinkID=760868
 apt -y install -f ./vscode.deb
@@ -34,35 +59,11 @@ apt update
 apt -y install docker-ce docker-ce-cli containerd.io
 usermod -aG docker $USER
 
-# apt remove vlc
-apt -y remove packagekit
-apt -y purge kontact
-apt -y remove okular
-apt -y remove gwenview
-apt -y remove akregator
-apt -y remove kmail
-apt -y remove kopete
-apt -y remove juk
-apt -y remove korganizer
-apt -y remove k3b
-apt -y remove dragonplayer
-apt -y remove ark
-apt -y remove kfind
-apt -y remove knotes
-apt -y remove kwrite
-apt -y remove sweeper
-apt -y remove kaddressbook
-apt -y remove kdepim-themeeditors
-apt -y remove pim-sieve-editor
-apt -y remove pim-data-exporter
-apt -y remove khelpcenter
-
-apt -y install neofetch
-
 systemctl disable NetworkManager-wait-online
 systemctl disable docker
 
 apt -y autoremove
 
-echo "source /home/$USER/Documents/dotfiles/.bashrc" >> /home/$USER/.bashrc
-echo "source /home/$USER/Documents/dotfiles/.bash_aliases" >> /home/$USER/.bashrc
+# TODO: check if files exist first
+# echo "source /home/$USER/Documents/dotfiles/.bashrc" >> /home/$USER/.bashrc
+# echo "source /home/$USER/Documents/dotfiles/.bash_aliases" >> /home/$USER/.bashrc
