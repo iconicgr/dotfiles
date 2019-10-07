@@ -1,7 +1,6 @@
 apt update
 apt -y upgrade
 
-# apt remove vlc
 apt -y install firefox-esr
 apt -y install git
 apt -y install gparted
@@ -57,18 +56,20 @@ add-apt-repository \
    stable"
 apt update
 apt -y install docker-ce docker-ce-cli containerd.io
-usermod -aG docker $USER
+sudo usermod -aG docker $USER
 
 systemctl disable NetworkManager-wait-online
 systemctl disable docker
 
 apt -y autoremove
 
-find /lib/modules/4.19.0.6-amd64/ -name *.ko -exec strip --strip-unneeded {} +
-touch /etc/initramfs-tools/conf.d/compress
-echo COMPRESS=xz > /etc/initramfs-tools/conf.d/compress
+cd /lib/modules/4.19.0-6-amd64/
+find . -name *.ko -exec strip --strip-unneeded {} +
+#Smaller but slower kernel load
+#touch /etc/initramfs-tools/conf.d/compress
+#echo COMPRESS=xz > /etc/initramfs-tools/conf.d/compress
 sed -i 's/MODULES=most/MODULES=dep/' /etc/initramfs-tools/initramfs.conf
-update-initramfs -u
+sudo update-initramfs -u
 
 # TODO: check if files exist first
 # echo "source /home/$USER/Documents/dotfiles/.bashrc" >> /home/$USER/.bashrc
