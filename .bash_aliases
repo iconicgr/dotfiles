@@ -1,6 +1,7 @@
 alias ls='ls -CF --color'
-alias ll='ls -l'
+alias ll='ls -la'
 alias la='ls -A'
 alias l='ls'
 alias c='clear'
 alias df='df -H -T | grep -v "tmpfs"'
+alias neofetch='clear;neofetch;cowsay "BTW I use Debian"'
