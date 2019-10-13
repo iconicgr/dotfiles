@@ -22,7 +22,7 @@ get_directory(){
     echo -e "$green$(dirs)$nocolor"
 }
 
-fqdn="$(hostname -A | rev | cut -c 2- | rev | cut -f1 -d' ')"
+fqdn="$(hostname -f)"
 
 get_fqdn(){
     echo -e " $bold$fqdn$nocolor"
@@ -97,7 +97,7 @@ get_git(){
 PS1='\n┌──'
 #PS1+='$(get_user) '
 PS1+='$(get_fqdn) '
-#PS1+='($(get_ip)) '
+PS1+='($(get_ip)) '
 PS1+='($(get_directory)) '
 PS1+='$(get_git)'
 PS1+='\n└──╼ $(get_ssh)\$ '
