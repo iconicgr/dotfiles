@@ -1,6 +1,7 @@
 apt update
 apt -y upgrade
 
+apt -y install cowsay
 apt -y install dnsutils
 apt -y install firefox-esr
 apt -y install git
