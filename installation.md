@@ -1,3 +1,6 @@
+Always check Arch Wiki for latest changes. This guide might not work in a newer release 
+https://wiki.archlinux.org/index.php/Installation_guide
+
 - [ ] Burn iso into USB
 ``` bash
 dd bs=4M if=path/to/archlinux.iso of=/dev/sdx status=progress oflag=sync
