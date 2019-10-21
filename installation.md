@@ -86,7 +86,7 @@ echo 127.0.1.1 dimitris-t450 >> /etc/hosts
 passwd
 ```
 
-- [ ] Install systemd-boot bootloader
+- [ ] Install systemd-boot bootloader. Uses partition labels. This might stop working if you change those or change disks
 ``` bash
 pacman -S efivar
 efivar --list
