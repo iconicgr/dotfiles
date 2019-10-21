@@ -8,7 +8,7 @@ https://wiki.archlinux.org/index.php/Installation_guide
 dd bs=4M if=path/to/archlinux.iso of=/dev/sdx status=progress oflag=sync
 ```
 
-- [ ] Connect ethernet cable to use active internet connection
+- [ ] Connect ethernet cable before booting to use active internet connection
 - [ ] Check EFI boot mode
 ``` bash
 ls /sys/firmware/efi/efivars
