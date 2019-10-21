@@ -21,7 +21,7 @@ ping www.google.com
 timedatectl set-ntp true
 ```
 
-- [ ] Partition the disk (Single disk that is wiped, EFI and EXT4, no swap)
+- [ ] Partition the disk (Single disk that is wiped, EFI and EXT4, no swap). Labels are added to simplify bootloader configuration
 ``` bash
 lsblk
 
