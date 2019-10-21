@@ -105,6 +105,14 @@ echo -e linux'\t'options=LABEL=SYSTEM rw >> /boot/loader/entries/arch.conf
 reboot
 ```
 - [ ] Login and enable dhcpd
+``` bash
+pacman -S dhcpcd
+systemctl enable dhcpcd
+systemctl start dhcpcd
+```
+
+Alternatively (??? TODO: which is better)
+
 ``` bash 
 echo -e [Match]'\n'Name=enp0s25'\n\n'[Network]'\n'DHCP=ipv4'\n\n'UseDNS=true'\n'UseDomains=true  > /etc/systemd/network/20-wired.network
 systemctl enable systemd-networkd
