@@ -33,12 +33,12 @@ parted
 (parted) mkpart primary ext4 500MiB 100%
 (parted) quit
 
+mkfs.fat -F32 /dev/sda1
+mkfs.ext4 /dev/sda2
+
 e2label /dev/sda2 SYSTEM
 pacman -S dosfstools
 fatlabel /dev/sda1 BOOT
-
-mkfs.fat -F32 /dev/sda1
-mkfs.ext4 /dev/sda2
 
 mount /dev/sda2 /mnt
 mkdir /mnt/boot
