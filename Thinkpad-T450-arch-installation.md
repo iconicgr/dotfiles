@@ -111,13 +111,6 @@ systemctl enable dhcpcd
 systemctl start dhcpcd
 ```
 
-Alternatively (??? TODO: which is better)
-
-``` bash 
-echo -e [Match]'\n'Name=enp0s25'\n\n'[Network]'\n'DHCP=ipv4'\n\n'UseDNS=true'\n'UseDomains=true  > /etc/systemd/network/20-wired.network
-systemctl enable systemd-networkd
-systemctl enable systemd-resolved
-```
 - [ ] Create a user, add to groups and uncomment %wheel on visudo
 ``` bash 
 useradd -m dimitris 
