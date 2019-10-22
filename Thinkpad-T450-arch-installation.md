@@ -102,13 +102,14 @@ echo -e linux'\t'/initramfs-linux.img >> /boot/loader/entries/arch.conf
 echo -e linux'\t'/intel-ucode.img >> /boot/loader/entries/arch.conf
 echo -e linux'\t'options=LABEL=SYSTEM rw >> /boot/loader/entries/arch.conf
 
-reboot
 ```
 - [ ] Login and enable dhcpd
 ``` bash
 pacman -S dhcpcd
 systemctl enable dhcpcd
 systemctl start dhcpcd
+
+reboot
 ```
 
 - [ ] Create a user, add to groups and uncomment %wheel on visudo
