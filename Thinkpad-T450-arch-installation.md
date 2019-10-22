@@ -133,10 +133,3 @@ pacman -S mesa
 pacman -S xorg xorg-server
 pacman -S plasma-meta
 ```
-
-- [ ] Enable dhcp
-``` bash
-pacman -S dhcpcd
-systemctl enable dhcpcd
-systemctl start dhcpcd
-```
