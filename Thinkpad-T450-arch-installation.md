@@ -103,7 +103,7 @@ echo -e linux'\t'/intel-ucode.img >> /boot/loader/entries/arch.conf
 echo -e linux'\t'options=LABEL=SYSTEM rw >> /boot/loader/entries/arch.conf
 
 ```
-- [ ] Login and enable dhcpd
+- [ ] Enable dhcpd and Reboot
 ``` bash
 pacman -S dhcpcd
 systemctl enable dhcpcd
