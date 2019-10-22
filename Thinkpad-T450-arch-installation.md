@@ -132,3 +132,8 @@ pacman -S mesa
 pacman -S xorg xorg-server
 pacman -S plasma-meta
 ```
+
+## TODO
+- Document systemd-boot parameters
+- Document i915 parameters
+- Document service disabling
