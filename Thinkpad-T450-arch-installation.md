@@ -97,7 +97,14 @@ rm /boot/loader/loader.conf
 echo default arch-* > /boot/loader/loader.conf
 
 pacman -S intel-ucode
-TODO: copy file from existing
+
+/boot/loader/entries/arch.conf
+title   Arch Linux
+linux   /vmlinuz-linux
+initrd  /amd-ucode.img
+initrd  /initramfs-linux.img
+options root=LABEL=SYSTEM rw quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_priority=3 vga=current nvidia-drm.modeset=1
+
 
 ```
 - [ ] Enable dhcpd and Reboot. 
@@ -128,6 +135,14 @@ pacman -S mesa
 ``` bash
 pacman -S xorg xorg-server
 pacman -S plasma-meta
+pacman -S inetutils
+
+pacman -S inetutils cowsay neofetch
+
+systemctl enable sddm
+
+# nvidia driver is required for sddm to load properly
+# pacman -S nvidia
 ```
 
 ## TODO
