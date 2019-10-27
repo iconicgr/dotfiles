@@ -97,10 +97,7 @@ rm /boot/loader/loader.conf
 echo default arch-* > /boot/loader/loader.conf
 
 pacman -S intel-ucode
-echo -e title'\t'Arch Linux > /boot/loader/entries/arch.conf
-echo -e linux'\t'/initramfs-linux.img >> /boot/loader/entries/arch.conf
-echo -e linux'\t'/intel-ucode.img >> /boot/loader/entries/arch.conf
-echo -e linux'\t'options=LABEL=SYSTEM rw >> /boot/loader/entries/arch.conf
+TODO: copy file from existing
 
 ```
 - [ ] Enable dhcpd and Reboot. 
