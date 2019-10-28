@@ -108,3 +108,6 @@ PS1+='\n└──╼ $(get_ssh)\$ '
 if [[ -f ~/.bash_aliases ]]; then
     . ~/.bash_aliases
 fi
+
+
+# 0a28a7e406423dec8724f32cb2628a70683b3918
