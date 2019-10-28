@@ -16,6 +16,8 @@ It was created to practice my sh writing skills.
 
 It's tested on latest Ubuntu and Debian. For Archlinux you can use the relevant branch.
 
+If icons do not work, try setting the font of your console to Hack
+
 ![Preview](images/dotfiles.png)
 
 ## Functionality

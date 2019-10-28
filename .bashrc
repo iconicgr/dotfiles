@@ -74,7 +74,7 @@ get_git(){
             git_state+=" $red?$number_untracked$nocolor"
         fi
 
-        local number_unpushed="$(git log --branches --not --remotes | grep commit | wc -l)"
+        local number_unpushed="$(git log --branches=*$branch --not --remotes | grep commit | wc -l)"
         if [[  ! "$number_unpushed" -eq "0" ]]; then
             git_state+=" $red⚑$number_unpushed$nocolor"
         fi
