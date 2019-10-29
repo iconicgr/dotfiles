@@ -100,8 +100,8 @@ echo default arch-* > /boot/loader/loader.conf
 pacman -S intel-ucode
 ```
 
-``` bash
 /boot/loader/entries/arch.conf
+``` bash
 title   Arch Linux
 linux   /vmlinuz-linux
 initrd  /amd-ucode.img
