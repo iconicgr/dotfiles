@@ -3,27 +3,27 @@
 Always check Arch Wiki for latest changes. This guide might not work in a newer release 
 https://wiki.archlinux.org/index.php/Installation_guide
 
-- [ ] Burn iso into USB
+## Burn iso into USB
 ``` bash
 dd bs=4M if=path/to/archlinux.iso of=/dev/sdx status=progress oflag=sync
 ```
 
-- [ ] Connect ethernet cable before booting to use active internet connection
-- [ ] Check EFI boot mode
+## Connect ethernet cable before booting to use active internet connection
+## Check EFI boot mode
 ``` bash
 ls /sys/firmware/efi/efivars
 ```
-- [ ] Check internet
+## Check internet
 ``` bash
 ping www.google.com
 ```
 
-- [ ] Update the system clock
+## Update the system clock
 ``` bash
 timedatectl set-ntp true
 ```
 
-- [ ] Partition the disk (Single disk that is wiped, EFI and EXT4, no swap). Labels are added to simplify bootloader configuration
+## Partition the disk (Single disk that is wiped, EFI and EXT4, no swap). Labels are added to simplify bootloader configuration
 ``` bash
 lsblk
 
@@ -47,28 +47,28 @@ mkdir /mnt/boot
 mount /dev/sda1 /mnt/boot
 ```
 
-- [ ] Install the base packages
+## Install the base packages
 ``` bash 
 pacstrap /mnt base linux linux-firmware
 ```
 
-- [ ] Generate fstab with UUIDs and visually check everything is ok
+## Generate fstab with UUIDs and visually check everything is ok
 ``` bash
 genfstab -U /mnt >> /mnt/etc/fstab
 nano /mnt/etc/fstab
 ```
 
-- [ ] Change root into the new system
+## Change root into the new system
 ``` bash 
 arch-chroot /mnt
 ```
 
-- [ ] Set time zone (you can type up to /zoneinfo/ and use tab to see contents instead of using ls in a separate command
+## Set time zone (you can type up to /zoneinfo/ and use tab to see contents instead of using ls in a separate command
 ``` bash 
 ln -sf /usr/share/zoneinfo/Europe/Athens /etc/localtime
 ```
 
-- [ ] Uncomment and generate locales, create the locale.conf
+## Uncomment and generate locales, create the locale.conf
 ``` bash
 pacman -S nano
 nano /etc/locale.gen
@@ -76,19 +76,20 @@ locale-gen
 echo LANG=en_US.UTF8 > /etc/locale.conf
 ```
 
-- [ ] Network identifiers for dhcp network connection
+## Network identifiers for dhcp network connection
 ``` bash
 echo dimitris-t450 > /etc/hostname
 echo 127.0.0.1 localhost >> /etc/hosts
 echo ::1 localhost >> /etc/hosts
 echo 127.0.1.1 dimitris-t450 >> /etc/hosts
 ```
-- [ ] Set root password
+
+## Set root password
 ``` bash 
 passwd
 ```
 
-- [ ] Install systemd-boot bootloader. Uses partition labels. This might stop working if you change those or change disks
+## Install systemd-boot bootloader. Uses partition labels. This might stop working if you change those or change disks
 ``` bash
 pacman -S efivar
 efivar --list
@@ -97,17 +98,18 @@ rm /boot/loader/loader.conf
 echo default arch-* > /boot/loader/loader.conf
 
 pacman -S intel-ucode
+```
 
+``` bash
 /boot/loader/entries/arch.conf
 title   Arch Linux
 linux   /vmlinuz-linux
 initrd  /amd-ucode.img
 initrd  /initramfs-linux.img
 options root=LABEL=SYSTEM rw quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_priority=3 vga=current nvidia-drm.modeset=1
-
-
 ```
-- [ ] Enable dhcpd and Reboot. 
+
+## Enable dhcpd and Reboot. 
 ``` bash
 pacman -S dhcpcd
 systemctl enable dhcpcd
@@ -115,7 +117,7 @@ systemctl enable dhcpcd
 reboot
 ```
 
-- [ ] Create a user, add to groups and uncomment %wheel on visudo
+## Create a user, add to groups and uncomment %wheel on visudo
 ``` bash 
 useradd -m dimitris 
 passwd dimitris
@@ -126,12 +128,12 @@ pacman -S vi
 visudo
 ```
 
-- [ ] Driver Installation as su
+## Driver Installation as su
 ``` bash
 pacman -S mesa
 ```
 
-- [ ] Install desktop
+## Install desktop
 ``` bash
 pacman -S xorg xorg-server
 pacman -S plasma-meta
