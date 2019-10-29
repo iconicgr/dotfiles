@@ -148,6 +148,6 @@ systemctl enable sddm
 ```
 
 ## TODO
-- Document systemd-boot parameters
 - Document i915 parameters
+- Document nvidia tearing fix
 - Document service disabling
