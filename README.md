@@ -14,7 +14,7 @@ source ~/dotfiles/.bash_aliases
 
 It was created to practice my sh writing skills. 
 
-It's tested on latest Ubuntu and Debian. For Archlinux you can use the relevant branch.
+It's tested on latest konsole on Ubuntu, Debian and Archlinux. termite seems to have some issues.
 
 If icons do not work, try setting the font of your console to Hack
 
