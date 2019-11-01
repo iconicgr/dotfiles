@@ -147,6 +147,8 @@ systemctl enable sddm
 # pacman -S nvidia
 pacman -S spectacle (for print screen)
 pacman -S code (VS code)
+pacman -S docker
+usermod -aG docker dimitris
 
 ```
 
