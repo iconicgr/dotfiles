@@ -145,6 +145,7 @@ systemctl enable sddm
 
 # nvidia driver is required for sddm to load properly
 # pacman -S nvidia
+# pacman -S spectacle (for print screen)
 ```
 
 ## TODO
