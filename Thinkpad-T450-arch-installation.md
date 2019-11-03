@@ -147,6 +147,10 @@ systemctl enable sddm
 # pacman -S nvidia
 pacman -S spectacle (for print screen)
 pacman -S code (VS code)
+pacman -S thunderbird
+pacman -S libreoffice
+yay -S ttf-ms-fonts
+yay -S ttf-vista-fonts
 pacman -S docker
 usermod -aG docker dimitris
 
