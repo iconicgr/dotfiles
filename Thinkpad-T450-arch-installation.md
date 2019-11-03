@@ -145,12 +145,21 @@ systemctl enable sddm
 
 # nvidia driver is required for sddm to load properly
 # pacman -S nvidia
+
 pacman -S spectacle (for print screen)
 pacman -S code (VS code)
 pacman -S thunderbird
 pacman -S libreoffice
+
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+
+yay -S anydesk
+yay -S google-chrome
 yay -S ttf-ms-fonts
 yay -S ttf-vista-fonts
+
 pacman -S docker
 usermod -aG docker dimitris
 
