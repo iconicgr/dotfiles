@@ -1,6 +1,6 @@
 get_git(){
     if [[ -d '.git' ]]; then
-        git_state="\n│    "
+        git_state="\n│    "
 
         if [[ -n "$(git status --porcelain)" ]]; then
             git_state+="$red"
