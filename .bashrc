@@ -1,3 +1,7 @@
+script_dir="${BASH_SOURCE%/*}"
+source $script_dir/formatting.sh
+source $script_dir/pcinfo.sh
+
 nocolor='\x01\e[0m\x02'
 red='\x01\e[91m\x02'
 green='\x01\e[92m\x02'
@@ -8,29 +12,10 @@ lightblue='\x01\e[96m\x02'
 bold='\x01\e[1m\x02'
 grey='\x01\e[38;5;239m\x02'
 
-get_user(){
-    echo -e "$USER"
-}
 
-ip="$(ip route get 1 | tr -s ' ' | cut -d' ' -f7)"
-
-get_ip(){
-    echo -e "$lightblue$ip$nocolor"
-}
-
-get_directory(){
-    echo -e "$green$(dirs)$nocolor"
-}
-
-fqdn="$(hostname -f)"
-
-get_fqdn(){
-    echo -e " $bold$fqdn$nocolor"
-}
-
-get_ssh(){
-    echo -e "$lightblue$(if [[ $(who am i) =~ \([-a-zA-Z0-9\.]+\)$ ]] ; then echo '(SSH)'; fi)$nocolor "
-}
+#get_ssh(){
+#    echo -e "$lightblue$(if [[ $(who am i) =~ \([-a-zA-Z0-9\.]+\)$ ]] ; then echo '(SSH)'; fi)$nocolor "
+#}
 
 get_git(){
     if [[ -d '.git' ]]; then
@@ -103,8 +88,3 @@ PS1+='$(get_git)'
 PS1+='\n└──╼ $(get_ssh)\$ '
 
 
-## Loading aliases
-## Tom Lawrence script
-if [[ -f ~/.bash_aliases ]]; then
-    . ~/.bash_aliases
-fi
