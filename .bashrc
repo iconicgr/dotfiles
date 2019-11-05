@@ -1,6 +1,7 @@
 script_dir="${BASH_SOURCE%/*}"
 source $script_dir/formatting.sh
 source $script_dir/pcinfo.sh
+source $script_dir/git.sh
 
 nocolor='\x01\e[0m\x02'
 red='\x01\e[91m\x02'
@@ -17,52 +18,52 @@ grey='\x01\e[38;5;239m\x02'
 #    echo -e "$lightblue$(if [[ $(who am i) =~ \([-a-zA-Z0-9\.]+\)$ ]] ; then echo '(SSH)'; fi)$nocolor "
 #}
 
-get_git(){
-    if [[ -d '.git' ]]; then
-        git_state="\n│   $bold$nocolor "
+#get_git(){
+#    if [[ -d '.git' ]]; then
+#        git_state="\n│   $bold$nocolor "
 
-        if [[ -n "$(git status --porcelain)" ]]; then
-            git_state+="$red"
-        else
-            git_state+="$green"
-        fi
+#        if [[ -n "$(git status --porcelain)" ]]; then
+#            git_state+="$red"
+#        else
+#            git_state+="$green"
+#        fi
 
-        local branch=$(git branch | grep '*' | awk '{print $2}')
-        if [[ -z "$branch" ]]; then
-            git_state+="(no commits yet)$nocolor"
-        else
-            git_state+="($branch)$nocolor"
-        fi
+#        local branch=$(git branch | grep '*' | awk '{print $2}')
+#        if [[ -z "$branch" ]]; then
+#            git_state+="(no commits yet)$nocolor"
+#        else
+#            git_state+="($branch)$nocolor"
+#        fi
 
-        local number_stash="$(git stash list 2>/dev/null | wc -l)"
-        if [[ ! "$number_stash" -eq 0 ]]; then
-            git_state+=" $orange§$number_stash$nocolor"
-        fi
+#        local number_stash="$(git stash list 2>/dev/null | wc -l)"
+#        if [[ ! "$number_stash" -eq 0 ]]; then
+#            git_state+=" $orange§$number_stash$nocolor"
+#        fi
+#
+#        local number_staged="$(git diff --staged --name-only --diff-filter=AM 2> /dev/null | wc -l)"
+#        if [[ ! "$number_staged" -eq "0" ]]; then
+#            git_state+=" $green✔$number_staged$nocolor"
+#        fi
 
-        local number_staged="$(git diff --staged --name-only --diff-filter=AM 2> /dev/null | wc -l)"
-        if [[ ! "$number_staged" -eq "0" ]]; then
-            git_state+=" $green✔$number_staged$nocolor"
-        fi
+#        local number_conflicts="$(git diff --name-only --diff-filter=U 2> /dev/null | wc -l)"
+#        if [[ ! "$number_conflicts" -eq "0" ]]; then
+#           git_state+= "$red✘$number_conflicts$nocolor"
+#        fi
 
-        local number_conflicts="$(git diff --name-only --diff-filter=U 2> /dev/null | wc -l)"
-        if [[ ! "$number_conflicts" -eq "0" ]]; then
-           git_state+= "$red✘$number_conflicts$nocolor"
-        fi
+#        local number_modified="$(git diff --name-only --diff-filter=M 2> /dev/null | wc -l )"
+#        if [[ ! "$number_modified" -eq "0" ]]; then
+#            git_state+=" $red✚$number_modified$nocolor"
+#        fi
 
-        local number_modified="$(git diff --name-only --diff-filter=M 2> /dev/null | wc -l )"
-        if [[ ! "$number_modified" -eq "0" ]]; then
-            git_state+=" $red✚$number_modified$nocolor"
-        fi
+#        local number_untracked="$(git ls-files --other --exclude-standard | wc -l)"
+#        if [[ ! "$number_untracked" -eq "0" ]]; then
+#            git_state+=" $red?$number_untracked$nocolor"
+#        fi
 
-        local number_untracked="$(git ls-files --other --exclude-standard | wc -l)"
-        if [[ ! "$number_untracked" -eq "0" ]]; then
-            git_state+=" $red?$number_untracked$nocolor"
-        fi
-
-        local number_unpushed="$(git log --branches=*$branch --not --remotes | grep commit | wc -l)"
-        if [[  ! "$number_unpushed" -eq "0" ]]; then
-            git_state+=" $red⚑$number_unpushed$nocolor"
-        fi
+#        local number_unpushed="$(git log --branches=*$branch --not --remotes | grep commit | wc -l)"
+#        if [[  ! "$number_unpushed" -eq "0" ]]; then
+#            git_state+=" $red⚑$number_unpushed$nocolor"
+#        fi
 
 #       local number_ahead="$(git status -sb | grep ahead | sed 's/.*behind \(.*\)]/\1/')"
 #        local number_behind="$(git status -sb | grep behind | sed 's/.*behind \(.*\)]/\1/')"
@@ -75,9 +76,9 @@ get_git(){
 #            fi
 #        fi
 
-        echo -e "$git_state"
-    fi
-}
+#        echo -e "$git_state"
+#    fi
+#}
 
 PS1='\n┌──'
 #PS1+='$(get_user) '
