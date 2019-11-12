@@ -57,6 +57,6 @@ get_git(){
 #            fi
 #        fi
 
-        echo -e "$git_state"
+        echo -e "$git_state "
     fi
 }
