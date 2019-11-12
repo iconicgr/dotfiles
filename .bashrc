@@ -20,6 +20,11 @@ PS1+='$(get_fqdn)'
 PS1+='$(get_directory)'
 PS1+='$(get_git)'
 PS1+='$(get_ssh)'
-PS1+='\n\$: '
-
+#PS1+='\n\$: '
+if ["$\$" == "w"]
+then
+PS1+='root: '
+else
+PS1+='$: '
+fi
 
