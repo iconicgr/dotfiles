@@ -12,7 +12,7 @@ get_directory(){
 }
 
 get_fqdn(){
-    format " $(hostname -f)" bold
+    format "$(hostname -f)" bold
 }
 
 get_ssh(){
