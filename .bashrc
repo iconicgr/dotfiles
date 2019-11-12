@@ -21,10 +21,10 @@ PS1+='$(get_directory)'
 PS1+='$(get_git)'
 PS1+='$(get_ssh)'
 #PS1+='\n\$: '
-if ["$\$" == "w"]
+if [[ "$EUID" -ne 0 ]]
 then
-PS1+='root: '
-else
 PS1+='$: '
+else
+PS1+='root: '
 fi
 
