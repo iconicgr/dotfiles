@@ -18,8 +18,6 @@ It's tested on latest konsole on Ubuntu, Debian and Archlinux. termite seems to 
 
 If icons do not work, try setting the font of your console to Hack
 
-![Preview](images/dotfiles.png)
-
 ## Functionality
 - *Readable bash prompt*: Provides much info without being distracting
 - *git*: Provides a clear overview of the local git repository. The feature is hidden for non-git directories.
