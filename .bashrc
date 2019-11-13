@@ -13,7 +13,7 @@ lightblue='\x01\e[96m\x02'
 bold='\x01\e[1m\x02'
 grey='\x01\e[38;5;239m\x02'
 
-PS1='${nocolor}'
+PS1='\[\033[00m\]'
 #PS1+='$(get_user)'
 PS1+='$(get_fqdn)'
 #PS1+='$(get_ip)'
@@ -25,6 +25,6 @@ if [[ "$EUID" -ne 0 ]]
 then
 PS1+='\n$: '
 else
-PS1+='\n${red}root: '
+PS1+='\n\[33[01;31m\]\root: '
 fi
 
