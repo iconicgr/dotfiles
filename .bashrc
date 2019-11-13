@@ -25,6 +25,6 @@ if [[ "$EUID" -ne 0 ]]
 then
 PS1+='\n$: '
 else
-PS1+='\n\[33[01;31m\]\root: '
+PS1+='\n\[\033[31m\]root: '
 fi
 
