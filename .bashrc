@@ -28,3 +28,4 @@ else
 PS1+='\n\[\033[31m\]root: '
 fi
 
+trap 'tput sgr0' DEBUG
