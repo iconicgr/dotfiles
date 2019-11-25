@@ -165,6 +165,10 @@ usermod -aG docker dimitris
 
 ```
 
+## Troubleshooting:
+### Slow netwwork
+sudo ethtool -s enp35s0 autoneg on speed 1000 duplex full
+
 ## TODO
 - Document i915 parameters
 - Document nvidia tearing fix
