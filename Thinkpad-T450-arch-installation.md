@@ -166,8 +166,10 @@ usermod -aG docker dimitris
 ```
 
 ## Troubleshooting:
-### Slow netwwork
+### Slow network
 sudo ethtool -s enp35s0 autoneg on speed 1000 duplex full
+### nvidia tearing
+nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
 
 ## TODO
 - Document i915 parameters
