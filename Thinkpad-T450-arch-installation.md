@@ -173,6 +173,7 @@ nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCom
 
 ## Fix IPS white balance (Innolux seems to be ~1000K off. Set for Desktop Publishing???)
 sudo pacman -S redshift
+
 redshift -P -O 7500
 
 ## TODO
