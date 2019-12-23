@@ -171,6 +171,10 @@ sudo ethtool -s enp35s0 autoneg on speed 1000 duplex full
 ### nvidia tearing
 nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
 
+## Fix IPS white balance (Innolux seems to be ~1000K off. Set for Desktop Publishing???)
+sudo pacman -S redshift
+redshift -P -O 7500
+
 ## TODO
 - Document i915 parameters
 - Document nvidia tearing fix
