@@ -172,9 +172,9 @@ sudo ethtool -s enp35s0 autoneg on speed 1000 duplex full
 nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = On }"
 
 ## Fix IPS white balance (Innolux seems to be ~1000K off. Set for Desktop Publishing???)
-sudo pacman -S redshift 
-reshift -x 
-redshift -P -O 7800 
+sudo pacman -S redshift  
+reshift -x  
+redshift -P -O 7800  
 
 ## TODO
 - Document i915 parameters
