@@ -175,6 +175,12 @@ nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCom
 sudo pacman -S redshift  
 reshift -x  
 redshift -P -O 7800  
+this adds the difference each time if not executed without the -x
+
+Alternatively, put this into KDE startup with command 
+redshift -o
+There is a small delay on startup, but it works ok, and fixes the temp without manual setting
+
 
 ## TODO
 - Document i915 parameters
