@@ -178,7 +178,14 @@ redshift -P -O 7800
 this adds the difference each time if not executed without the -x
 
 Alternatively, put this into KDE startup with command 
-redshift -o
+'''redshift -o'''
+And this to ~/.config/redshift/redshift.conf 
+'''
+[redshift]
+temp-day=7500
+temp-night=7000
+fade=0
+'''
 There is a small delay on startup, but it works ok, and fixes the temp without manual setting
 
 
