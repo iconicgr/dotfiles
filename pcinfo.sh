@@ -16,6 +16,6 @@ get_fqdn(){
 }
 
 get_ssh(){
-    format "$(if [[ $(whoami) =~ \([-a-zA-Z0-9\.]+\)$ ]] ; then echo '(SSH)'; fi) " lightblue
+    format "$(if [[ $(who am i) =~ \([-a-zA-Z0-9\.]+\)$ ]] ; then echo '(SSH)'; fi) " lightblue
 #    echo -e "$lightblue$(if [[ $(who am i) =~ \([-a-zA-Z0-9\.]+\)$ ]] ; then echo '(SSH)'; fi)$nocolor "
 }
