@@ -86,3 +86,7 @@ apt update
 apt install linux-headers-`uname -r`
 apt install -t buster-backports dkms spl-dkms
 apt install -t buster-backports zfs-dkms zfsutils-linux
+
+ls -l /dev/disk/by-id/
+zpool create poolname scsi-35000cca26c108480
+
