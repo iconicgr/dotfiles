@@ -90,3 +90,7 @@ apt install -t buster-backports zfs-dkms zfsutils-linux
 ls -l /dev/disk/by-id/
 zpool create poolname scsi-35000cca26c108480
 
+apt install borgbackup
+
+borg init --encryption=none /backup-pool/repository
+
