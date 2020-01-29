@@ -76,3 +76,13 @@ sudo update-initramfs -u
 # TODO: check if files exist first
 # echo "source /home/$USER/Documents/dotfiles/.bashrc" >> /home/$USER/.bashrc
 # echo "source /home/$USER/Documents/dotfiles/.bash_aliases" >> /home/$USER/.bashrc
+
+## ZFS
+
+echo deb http://deb.debian.org/debian buster contrib >> /etc/apt/sources.list
+echo deb http://deb.debian.org/debian buster-backports main contrib >> /etc/apt/sources.list
+apt update
+
+apt install linux-headers-`uname -r`
+apt install -t buster-backports dkms spl-dkms
+apt install -t buster-backports zfs-dkms zfsutils-linux
