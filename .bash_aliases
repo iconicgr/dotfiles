@@ -1,4 +1,6 @@
-alias ll='ls -lha'
+alias ll='ls -lh'
+alias la='ls -lha'
+
 alias c='clear'
 alias df='df -H -T | grep -v -E "tmpfs|overlay"'
 alias neo='clear;neofetch;cowsay "BTW I use Debian"'
