@@ -163,6 +163,10 @@ yay -S ttf-vista-fonts
 pacman -S docker
 usermod -aG docker dimitris
 
+sudo -S nautilus
+sudo -S gvfs-nfs
+sudo -S gvfs-smb
+
 ```
 
 ## Troubleshooting:
