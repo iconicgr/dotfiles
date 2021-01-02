@@ -105,9 +105,9 @@ pacman -S intel-ucode
 ``` bash
 title   Arch Linux
 linux   /vmlinuz-linux
-initrd  /amd-ucode.img
+initrd  /intel-ucode.img
 initrd  /initramfs-linux.img
-options root=LABEL=SYSTEM rw quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_priority=3 vga=current nvidia-drm.modeset=1
+options root=LABEL=SYSTEM rw quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log_priority=3 vga=current
 ```
 
 ## Enable dhcpd and Reboot. 
