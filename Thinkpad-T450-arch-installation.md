@@ -137,8 +137,9 @@ pacman -S mesa
 ## Install desktop
 ``` bash
 pacman -S xorg xorg-server
-pacman -S plasma-meta
+pacman -S plasma-meta plasma-nm
 pacman -S inetutils
+pacman -S konsole
 
 pacman -S inetutils cowsay neofetch
 
