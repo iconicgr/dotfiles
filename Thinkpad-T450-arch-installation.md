@@ -140,6 +140,7 @@ pacman -S xorg xorg-server
 pacman -S plasma-meta plasma-nm
 pacman -S inetutils
 pacman -S konsole
+systemctl enable NetworkManager
 
 pacman -S inetutils cowsay neofetch
 
