@@ -154,6 +154,7 @@ pacman -S code (VS code)
 pacman -S thunderbird
 pacman -S libreoffice
 
+pacman -S base-devel
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
