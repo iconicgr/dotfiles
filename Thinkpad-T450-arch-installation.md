@@ -66,6 +66,7 @@ arch-chroot /mnt
 ## Set time zone (you can type up to /zoneinfo/ and use tab to see contents instead of using ls in a separate command
 ``` bash 
 ln -sf /usr/share/zoneinfo/Europe/Athens /etc/localtime
+hwclock --systohc
 ```
 
 ## Uncomment and generate locales, create the locale.conf
