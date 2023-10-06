@@ -16,3 +16,7 @@ alias ga='git add .'
 
 alias glances="docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro --pid host --network host -it docker.io/nicolargo/glances"
 
+alias up="docker compose up -d"
+alias down="docker compose down"
+alias build="docker compose build"
+alias exec='_foo() { docker exec -it $1 /bin/bash; }; _foo'
