@@ -20,3 +20,4 @@ alias up="docker compose up -d"
 alias down="docker compose down"
 alias build="docker compose build"
 alias exec='_foo() { docker exec -it $1 /bin/bash; }; _foo'
+alias tree='tree -L 2'
