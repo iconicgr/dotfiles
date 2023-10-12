@@ -34,4 +34,4 @@ export COLORTERM=truecolor
 
 PATH="$PATH:/usr/local/lib/nodejs/node/bin"
 
-tmux
+cd /service-pool/stack
