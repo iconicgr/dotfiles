@@ -1,2 +1,4 @@
 ..bashrc.swp
 .idea
+/micro/backups/*
+/micro/buffers/*

@@ -34,4 +34,6 @@ export COLORTERM=truecolor
 
 PATH="$PATH:/usr/local/lib/nodejs/node/bin"
 
+export MICRO_CONFIG_HOME=~/dotfiles/micro
+
 cd /service-pool/stack
