@@ -1,5 +1,9 @@
 {
-    "clipboard": "terminal",
+    "colorcolumn": 80,
     "mouse": false,
+    "ruler": false,
+    "saveundo": true,
+    "scrollmargin": 8,
+    "tabmovement": true,
     "tabstospaces": true
 }
