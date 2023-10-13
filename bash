@@ -14,7 +14,7 @@ bold='\x01\e[1m\x02'
 grey='\x01\e[38;5;239m\x02'
 
 PS1='\[\033[00m\]'
-PS1+='$(get_user)'
+#PS1+='$(get_user)'
 PS1+='$(get_fqdn)'
 PS1+='$(get_ip)'
 PS1+='$(get_directory)'
