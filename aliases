@@ -22,5 +22,6 @@ alias restart="down && up"
 alias build="docker compose build"
 alias pull="docker compose pull"
 alias restart="down && up"
+alias logs="docker logs -n 10 -f"
 alias exec='_foo() { docker exec -it $1 /bin/bash; }; _foo'
 alias tree='tree -L 2 -a -I ".git*"'
