@@ -19,5 +19,7 @@ alias glances="docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro -
 alias up="docker compose up -d"
 alias down="docker compose down"
 alias build="docker compose build"
+alias pull="docker compose pull"
+alias restart="down && up"
 alias exec='_foo() { docker exec -it $1 /bin/bash; }; _foo'
 alias tree='tree -L 2 -a -I ".git*"'
