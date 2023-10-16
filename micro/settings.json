@@ -1,5 +1,6 @@
 {
     "colorcolumn": 80,
+    "colorscheme": "monokai",
     "mouse": false,
     "ruler": false,
     "saveundo": true,

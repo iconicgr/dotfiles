@@ -18,6 +18,7 @@ alias glances="docker run --rm -v /var/run/docker.sock:/var/run/docker.sock:ro -
 
 alias up="docker compose up -d"
 alias down="docker compose down"
+alias restart="down && up"
 alias build="docker compose build"
 alias pull="docker compose pull"
 alias restart="down && up"
