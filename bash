@@ -19,7 +19,7 @@ PS1+='$(get_fqdn)'
 PS1+='$(get_ip)'
 PS1+='$(get_directory)'
 PS1+='$(get_git)'
-PS1+='$(get_ssh)'
+#PS1+='$(get_ssh)'
 #PS1+='\n\$: '
 if [[ "$EUID" -ne 0 ]]
 then
@@ -37,3 +37,4 @@ PATH="$PATH:/usr/local/lib/nodejs/node/bin"
 export MICRO_CONFIG_HOME=~/dotfiles/micro
 
 cd /service-pool/stack
+
