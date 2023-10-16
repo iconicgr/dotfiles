@@ -1,7 +1,7 @@
-apt update
-apt -y upgrade
+sudo apt-get update
+sudo apt-get -y upgrade
 
-apt -y install --no-recommends cowsay \
+sudo apt-get -y install --no-recommends cowsay \
                                 dnsutils \
                                 git \
                                 htop \
