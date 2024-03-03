@@ -3,7 +3,7 @@ alias la='ls -lha --color'
 alias du='du -hd 1'
 alias c='clear'
 alias df='df -H -T | grep -v -E "tmpfs|overlay"'
-alias neo='clear;neofetch;cowsay "BTW I use Debian"'
+alias neo='clear;neofetch'
 alias sub='du -sh ./*'
 #alias up='sudo pacman -Syu'
 alias up='sudo apt update; sudo apt upgrade'
@@ -25,3 +25,55 @@ alias restart="down && up"
 alias logs="docker logs -n 10 -f"
 alias exec='_foo() { docker exec -it $1 /bin/bash; }; _foo'
 alias tree='tree -L 2 -a -I ".git*"'
+
+
+SCAN_FORMAT=jpeg
+SCAN_RESOLUTION=600
+SCAN_ADDRESS=escl:http://10.153.3.201:80
+SCAN_QUALITY=90
+SCAN_OUTPUT=pdf
+
+declare -A paperHeight
+declare -A paperWidth
+
+paperHeight['a4']=297
+paperWidth['a4']=210
+paperHeight['a5']=210
+paperWidth['a5']=148
+paperHeight['card']=90
+paperWidth['card']=60
+
+
+alias 4="scan a4 portrait"
+alias 4l="scan a4 landscape"
+alias 5="scan a5 portrait"
+alias 5l="scan a5 landscape"
+alias c="scan card landscape"
+alias ad="adf-duplex a4"
+alias as="adf a4"
+
+function adf(){
+    DATE=$(date +"%Y%m%d%H%M%S")
+    scanimage --device-name=$SCAN_ADDRESS --format=jpeg --resolution=$SCAN_RESOLUTION --source=ADF -l 0 -t 0 -x ${paperWidth[$1]} -y ${paperHeight[$1]} --batch=batch-$DATE-%d.jpg
+    wait
+    convert batch* scan$DATE.$SCAN_OUTPUT
+    rm batch*.jpg
+}
+
+function scan(){
+    # $1 is a4 | a5
+    # $2 is orientation: portrait | landscape
+
+    DATE=$(date +"%Y%m%d%H%M%S")
+    scanimage --device-name=$SCAN_ADDRESS --format=$SCAN_FORMAT --resolution=$SCAN_RESOLUTION -l 0 -t 0 -x ${paperWidth[$1]} -y ${paperHeight[$1]} -o scan$DATE.$SCAN_FORMAT
+    wait
+
+    if [ "$2" == "landscape" ]; then
+        convert -density $SCAN_RESOLUTION scan$DATE.$SCAN_FORMAT -rotate 90 -quality $SCAN_QUALITY scan$DATE.$SCAN_FORMAT
+    fi
+
+    if [ "$SCAN_FORMAT" != "$SCAN_OUTPUT" ]; then
+        convert scan$DATE.$SCAN_FORMAT scan$DATE.$SCAN_OUTPUT
+        rm scan$DATE.$SCAN_FORMAT
+    fi
+}
