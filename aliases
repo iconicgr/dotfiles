@@ -28,29 +28,27 @@ alias tree='tree -L 2 -a -I ".git*"'
 
 
 SCAN_FORMAT=jpeg
-SCAN_RESOLUTION=600
-SCAN_ADDRESS=escl:http://10.153.3.201:80
-SCAN_QUALITY=90
-SCAN_OUTPUT=pdf
-
-declare -A paperHeight
-declare -A paperWidth
-
-paperHeight['a4']=297
-paperWidth['a4']=210
-paperHeight['a5']=210
-paperWidth['a5']=148
-paperHeight['card']=90
-paperWidth['card']=60
+SCAN_RESOLUTION=300
+#SCAN_ADDRESS=escl:http://10.153.3.201:80
+SCAN_ADDRESS="pixma:04A91912_4C22C5"
+SCAN_QUALITY=100
+export SCAN_OUTPUT=pdf
 
 
-alias 4="scan a4 portrait"
-alias 4l="scan a4 landscape"
-alias 5="scan a5 portrait"
-alias 5l="scan a5 landscape"
-alias c="scan card landscape"
+alias 4+="scan 216 297"
+alias 4="scan 210 297"
+alias 4l="scan 210 297 rotate"
+alias 5="scan 210 148 rotate"
+alias 5l="scan 210 148"
+alias ap="scan 170 100"
+alias c="scan 60 90 rotate"
 alias ad="adf-duplex a4"
 alias as="adf a4"
+alias scaninfo="scaninfo"
+alias 19="scan 210 190"
+alias 20="scan 210 200"
+alias 21="scan 210 210"
+alias pdf="pdf"
 
 function adf(){
     DATE=$(date +"%Y%m%d%H%M%S")
@@ -61,19 +59,34 @@ function adf(){
 }
 
 function scan(){
-    # $1 is a4 | a5
-    # $2 is orientation: portrait | landscape
+    # $1 is width
+    # $2 is height
+    # $3 is rotation
+
+    cd /data/paperless/ftp
 
     DATE=$(date +"%Y%m%d%H%M%S")
-    scanimage --device-name=$SCAN_ADDRESS --format=$SCAN_FORMAT --resolution=$SCAN_RESOLUTION -l 0 -t 0 -x ${paperWidth[$1]} -y ${paperHeight[$1]} -o scan$DATE.$SCAN_FORMAT
+    scanimage -p --device-name=$SCAN_ADDRESS --format=$SCAN_FORMAT --resolution=$SCAN_RESOLUTION -l 0 -t 0 -x $1 -y $2 -o scan$DATE.$SCAN_FORMAT
     wait
+    sleep 1
 
-    if [ "$2" == "landscape" ]; then
-        convert -density $SCAN_RESOLUTION scan$DATE.$SCAN_FORMAT -rotate 90 -quality $SCAN_QUALITY scan$DATE.$SCAN_FORMAT
+    if [ "$3" == "rotate" ]; then
+        convert -density $SCAN_RESOLUTION scan$DATE.$SCAN_FORMAT -brightness-contrast -5x20 -rotate 90 -quality $SCAN_QUALITY scan$DATE.$SCAN_OUTPUT
+    else
+        convert -density $SCAN_RESOLUTION scan$DATE.$SCAN_FORMAT -brightness-contrast -5x20 -quality $SCAN_QUALITY scan$DATE.$SCAN_OUTPUT
     fi
 
-    if [ "$SCAN_FORMAT" != "$SCAN_OUTPUT" ]; then
-        convert scan$DATE.$SCAN_FORMAT scan$DATE.$SCAN_OUTPUT
+    if [ $SCAN_FORMAT != $SCAN_OUTPUT ]; then
         rm scan$DATE.$SCAN_FORMAT
     fi
+}
+
+function pdf(){
+    DATE=$(date +"%Y%m%d%H%M%S")
+    convert -density $SCAN_RESOLUTION -quality $SCAN_QUALITY *.jpg scan$DATE.pdf
+    rm *.jpg
+}
+
+function scaninfo(){
+    scanimage --device-name=$SCAN_ADDRESS -A
 }

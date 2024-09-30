@@ -5,6 +5,5 @@
     "saveundo": true,
     "scrollmargin": 8,
     "tabmovement": true,
-    "tabstospaces": true,
-    "mouse": true
+    "tabstospaces": true
 }
