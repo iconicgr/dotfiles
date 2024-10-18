@@ -35,6 +35,8 @@ apt -y remove packagekit
 apt -y remove pim-data-exporter
 apt -y remove pim-sieve-editor
 apt -y remove sweeper
+apt-get remove -y aisleriot gnome-sudoku gnome-mahjongg ace-of-penguins gbrainy gnome-mines  four-in-a-row gnome-2048 gnome-weather gnome-chess five-or-more cheese gnome-nibbles quadrapassel tali gnome-taquin gnome-tetravex gnome-klotski iagno gnome-maps gnome-calendar gnome-contacts evolution hitori totem simple-scan gnome-music rhythmbox gnome-robots shotwell swell-foop gnome-clocks lightsoff gnome-sound-recorder
+
 
 git config --global user.email "d.kastaniotis@iconic.gr"
 git config --global user.name "Dimitris Kastaniotis"
