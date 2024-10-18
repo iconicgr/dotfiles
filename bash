@@ -36,6 +36,7 @@ PATH="$PATH:/usr/local/lib/nodejs/node/bin"
 
 export MICRO_CONFIG_HOME=~/dotfiles/micro
 
-tmux
+#tmux
 #cd /service-pool/stack
 
+fish
